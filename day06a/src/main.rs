@@ -1,5 +1,6 @@
 use std::{collections::HashSet, slice::Windows};
 
+const WINDOW_SIZE: usize = 14;
 pub fn check_window(window: &mut Windows<char>) -> bool {
     let letters = &window.next().unwrap().to_vec();
 
@@ -15,8 +16,8 @@ pub fn main() {
 
     let chars = input.chars().collect::<Vec<char>>();
 
-    let mut window = chars.windows(4);
-    let mut before_marker = 4;
+    let mut window = chars.windows(WINDOW_SIZE);
+    let mut before_marker = WINDOW_SIZE;
 
     while !check_window(&mut window) {
         before_marker += 1
