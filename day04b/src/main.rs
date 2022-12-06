@@ -4,6 +4,7 @@ pub fn is_overlap(a:u32,b:u32,c:u32,d:u32)->bool{
 
 pub fn main() {
     let lines = include_str!("../input.txt").split("\n");
+
     let range_sum: u32 = lines
         .map(|l| {
             let mut splitted = l.split(",");
